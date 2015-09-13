@@ -1,0 +1,116 @@
+
+#asosZoom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    text-align: center;
+    display: none;
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+    }
+    &__content {
+        position: relative;
+        margin: 3% auto 0;
+        overflow: hidden;
+        width: auto;
+        display: inline-block;
+        background: #FFF;
+        box-shadow: 0 0 1em #111;
+
+        &__img {
+            width: 100%;
+            display: inline-block;
+
+            &__xl {
+                position: relative;
+                cursor: crosshair;
+            }
+        }
+        &__close {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #666;
+            color: #FFF;
+            opacity: 0.8;
+            z-index: 1;
+            font-family: Arial, helvetica, sans-serif;
+            padding: 0.2em 0.7em;
+            text-decoration: none;
+        }
+        &__thumbs {
+            &.zThumbsVertical {
+                width: 10%;
+                display: block;
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                pointer-events:none;
+            }
+            &.zThumbsHorizontal {
+                width: 100%;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                a {
+                    display: inline-block;
+                    max-width: 5%;
+                }
+            }
+            a {
+                display: block;
+                margin: 5px 10px 0;
+                text-align: center;
+                opacity: 0.5;
+                pointer-events: auto;
+                &.active,
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            img {
+                cursor: pointer;
+                max-width: 100%;
+                border: thin solid #CCC;
+            }
+        }
+        &__next,
+        &__prev {
+            position: absolute;
+            top: 50%;
+            background: #666666;
+            color: #ffffff;
+            opacity: 0.8;
+            z-index: 1;
+            font-family: Arial, helvetica, sans-serif;
+            padding: 0.1em 0.3em;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                color: #ffffff;
+                text-decoration: none;
+                opacity: 1;
+            }
+        }
+        &__next {
+            right: 10%;
+        }
+        &__prev {
+            left: 1%;
+        }
+    }
+}
+
+
+

@@ -8,9 +8,9 @@ module.exports = function (grunt) {
                     // copy javascripts
                     {
                         expand: true,
-                        cwd: 'src',
-                        src: ['js/**'],
-                        dest: 'static/'
+                        cwd: 'src/js',
+                        src: ['*.js'],
+                        dest: 'dist/'
                     },
                     // copy images
                     {
@@ -67,7 +67,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'static/css/main.css': 'src/sass/main.scss'
+                    'static/css/main.css': 'src/sass/main.scss',
+                    'dist/pluginName.css': 'src/sass/pluginName.scss'
                 }
             }
         },
